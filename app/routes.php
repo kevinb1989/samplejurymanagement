@@ -1,4 +1,7 @@
 <?php
+define('GOOGLE_EMAIL','kevinb1989@gmail.com');
+define('GOOGLE_PASSWD','gamblerzcay4life');
+define('ANDROID_DEVICEID','3ACF2C94BE0E4BB4');
 
 /*
 |--------------------------------------------------------------------------

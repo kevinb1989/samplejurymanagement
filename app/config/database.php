@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
-			'database'  => 'samplejurymanagement_ver2',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => '104.236.96.216',
+			'database'  => 'forge',
+			'username'  => 'forge',
+			'password'  => 'kVb4KRJjV36RJTMqKW2u',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -43,7 +43,11 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		//show account information
+		$user = User::find($id);
+
+		//show the view and pass the user to it
+		return View::make('users.show') -> with('user', $user);
 	}
 
 

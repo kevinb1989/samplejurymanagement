@@ -115,6 +115,9 @@
                 <li>
                     {{link_to('subscribe', 'BECOME A SPONSORED PROFESSIONAL')}}
                 </li>
+                <li>
+                    {{link_to('account-settings', 'ACCOUNT SETTINGS')}}
+                </li>
             </ul>
         </div>
 

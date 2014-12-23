@@ -370,7 +370,7 @@ Route::post('login', function(){
 	$email = Input::get('email');
 	$password = Input::get('password');
 	if(Auth::attempt(array('email' => $email, 'password' => $password))){
-		return Redirect::to('subscribe');
+		return Redirect::to('account-settings');
 	}else{
 		return Redirect::to('login') -> with("error", "incorrect combination of username and password");
 	}
@@ -379,4 +379,41 @@ Route::post('login', function(){
 Route::get('logout', function(){
 	Auth::logout();
 	return Redirect::to('login');
+});
+
+//manage users
+Route::resource('users','UsersController');
+
+//account settings
+Route::get('account-settings', function(){
+$user = Auth::user();
+
+return View::make('account-settings') -> with('user', $user);
+});
+
+//download the invoice
+Route::get('download-invoice', function(){
+	$user = Auth::user();
+	$invoices = $user -> invoices();
+
+	if(($invoiceCount=count($invoices))>0){
+		return $user -> downloadInvoice($invoices[$invoiceCount-1] -> id, [
+				'vendor' => 'Square Media',
+				'product' => 'Top App Ninja Sponsored Pro'
+			]);
+	}else{
+		return 'No invoice found';
+	}
+});
+
+Route::get('cancel-subscription', function(){
+	$user = Auth::user();
+	$user -> subscription() -> cancel();
+	return View::make('account-settings') -> with('user', $user);
+});
+
+Route::get('resume-subscription', function(){
+	$user = Auth::user();
+	$user -> subscription('TANSponsoredPro') -> resume();
+	return View::make('account-settings') -> with('user', $user);
 });

@@ -72,6 +72,23 @@
     <div class="top-nav ">
 
         <!--search & user info goes here-->
+        <ul class = "nav pull-right top-menu">
+            <li class="drop-down">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    @if(Auth::check())
+                        <span class="username">{{ Auth::user() -> fullname }}</span>
+                        |
+                        
+                    @else
+                        {{Redirect::to('login')}}
+                    @endif
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <span class="username">{{link_to('logout', 'logout')}}</span>
+                </ul>
+            </li>
+        </ul>
 
     </div>
 

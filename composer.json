@@ -9,7 +9,8 @@
 		"barryvdh/laravel-debugbar": "1.*",
 		"splitfeed/android-market-api-php": "dev-master",
 		"payum/payum-laravel-package": "*@stable",
-		"payum/paypal-express-checkout-nvp": "*@stable"
+		"payum/paypal-express-checkout-nvp": "*@stable",
+		"laravel/cashier": "~2.0"
 	},
 	"autoload": {
 		"classmap": [

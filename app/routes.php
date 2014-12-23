@@ -11,6 +11,8 @@
 |
 */
 
+User::setStripeKey('sk_test_lEkhqwf5n4Fp4RiiMSbBOTVk');
+
 Route::get('/', function()
 {
 	return View::make('hello');
@@ -346,4 +348,35 @@ Route::get('subscribe', function(){
 
 Route::get('subscribe-success', function(){
 	return View::make('subscribe-success');
+});
+
+Route::post('stripe', function(){
+	$token = Input::get('stripeToken');
+
+	Auth::user() -> subscription('TANSponsoredPro') -> create($token);
+
+	return Redirect::to('subscribe-success');
+});
+
+Route::get('test-hassing/{init_string?}',function($init_string = '12345678'){
+	return Hash::make($init_string);
+});
+
+Route::get('login', function(){
+	return View::make('login');
+});
+
+Route::post('login', function(){
+	$email = Input::get('email');
+	$password = Input::get('password');
+	if(Auth::attempt(array('email' => $email, 'password' => $password))){
+		return Redirect::to('subscribe');
+	}else{
+		return Redirect::to('login') -> with("error", "incorrect combination of username and password");
+	}
+});
+
+Route::get('logout', function(){
+	Auth::logout();
+	return Redirect::to('login');
 });

@@ -57,7 +57,7 @@ return array(
 			'host'      => '104.236.96.216',
 			'database'  => 'samplejurymanagement',
 			'username'  => 'forge',
-			'password'  => 'kVb4KRJjV36RJTMqKW2u',
+			'password'  => 'gBEw0FnY5pPEhgExynNq',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

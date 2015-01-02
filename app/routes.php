@@ -350,10 +350,28 @@ Route::get('subscribe-success', function(){
 	return View::make('subscribe-success');
 });
 
-Route::post('stripe', function(){
+Route::get('subscribe-failure', function(){
+	return View::make('subscribe-failure');
+});
+
+Route::post('tan-sponsored-pro-subscribe', function(){
 	$token = Input::get('stripeToken');
 
 	Auth::user() -> subscription('TANSponsoredPro') -> create($token);
+
+	return Redirect::to('subscribe-success');
+});
+
+Route::post('one-day-test-plan-subscribe', function(){
+	$token = Input::get('stripeToken');
+
+	try{
+		Auth::user() -> subscription('OneDayTestPlan') -> create($token);
+	}catch(Exception $e){
+		$errMsg = $e -> getMessage();
+		Redirect::to('subscribe-failure')->with('error', $errMsg);
+	}
+	
 
 	return Redirect::to('subscribe-success');
 });
@@ -386,9 +404,26 @@ Route::resource('users','UsersController');
 
 //account settings
 Route::get('account-settings', function(){
-$user = Auth::user();
-
-return View::make('account-settings') -> with('user', $user);
+	$user = Auth::user();
+	if($user -> subscribed()){
+		$invoices = $user -> invoices();
+		//retrieve the last invoice
+		$lastInvoice = end($invoices);
+		//last billing date
+		$lastBillingDate = $lastInvoice -> dateString();
+		//add 1 month or 1 day to the last billing date to make the upcoming billing date
+		if($user -> onPlan('TANSponsoredPro')){
+			$upcomingBillingDate = date(DateTime::COOKIE, strtotime("+1 month", strtotime($lastBillingDate)));
+		}else if($user -> onPlan('OneDayTestPlan')){
+			$upcomingBillingDate = date(DateTime::COOKIE, strtotime("+1 day", strtotime($lastBillingDate)));
+		}
+		
+		return View::make('account-settings') -> with('user', $user)
+			-> with('upcomingBillingDate', $upcomingBillingDate);
+	}else{
+		return View::make('account-settings') -> with('user', $user);
+	}
+	
 });
 
 //download the invoice
@@ -417,3 +452,6 @@ Route::get('resume-subscription', function(){
 	$user -> subscription('TANSponsoredPro') -> resume();
 	return View::make('account-settings') -> with('user', $user);
 });
+
+//handle failed payments
+Route::post('webhook', 'Laravel\Cashier\WebhookController@handleWebhook');

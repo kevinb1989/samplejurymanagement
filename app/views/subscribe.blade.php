@@ -15,14 +15,27 @@
 		</form>
 	</section>
 	<section class="panel">
-		<header class="panel-heading">Subscribe with Stripe</header>
-			<form action="stripe" method="POST">
+		<header class="panel-heading">Subscribe to Top App Ninja Sponsored Pro Plan</header>
+			<form action="tan-sponsored-pro-subscribe" method="POST">
 			  <script
 			    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			    data-key="pk_test_dG1BzC8Ku9JQ0YH0roUCUUVG"
 			    data-amount="5000"
 			    data-name="TAN sponsored pro"
 			    data-description="Monthly Subscription"
+			    data-image="/128x128.png">
+			  </script>
+			</form>
+	</section>
+	<section class="panel">
+		<header class="panel-heading">Subscribe to One Day Test Plan</header>
+			<form action="one-day-test-plan-subscribe" method="POST">
+			  <script
+			    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			    data-key="pk_test_dG1BzC8Ku9JQ0YH0roUCUUVG"
+			    data-amount="1000"
+			    data-name="One Day Test Plan"
+			    data-description="Daily Subscription"
 			    data-image="/128x128.png">
 			  </script>
 			</form>

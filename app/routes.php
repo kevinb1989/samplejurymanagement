@@ -454,4 +454,4 @@ Route::get('resume-subscription', function(){
 });
 
 //handle failed payments
-Route::post('webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
+Route::post('webhook', 'MyWebhookController@handleWebhook');

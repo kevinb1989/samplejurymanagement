@@ -416,6 +416,8 @@ Route::get('account-settings', function(){
 			$upcomingBillingDate = date(DateTime::COOKIE, strtotime("+1 month", strtotime($lastBillingDate)));
 		}else if($user -> onPlan('OneDayTestPlan')){
 			$upcomingBillingDate = date(DateTime::COOKIE, strtotime("+1 day", strtotime($lastBillingDate)));
+		}else{
+			$upcomingBillingDate = "undefined";
 		}
 		
 		return View::make('account-settings') -> with('user', $user)

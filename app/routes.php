@@ -457,3 +457,6 @@ Route::get('resume-subscription', function(){
 
 //handle failed payments
 Route::post('webhook', 'MyWebhookController@handleWebhook');
+
+//IPN listener
+Route::post('ipn', array('uses' => 'IpnController@store', 'as' => 'ipn'));

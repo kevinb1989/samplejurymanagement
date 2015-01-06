@@ -10,7 +10,8 @@
 		"splitfeed/android-market-api-php": "dev-master",
 		"payum/payum-laravel-package": "*@stable",
 		"payum/paypal-express-checkout-nvp": "*@stable",
-		"laravel/cashier": "~2.0"
+		"laravel/cashier": "~2.0",
+		"logicalgrape/paypal-ipn-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

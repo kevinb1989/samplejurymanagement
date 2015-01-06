@@ -4,25 +4,25 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3dc49b6eeaa399696042a50225a435bb",
+    "hash": "d3d6358c3571f7c89c3cda62eaf9a6c2",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v1.8.4",
+            "version": "v1.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "410e98739c58ccd1b9ad2f49afd77a8d40144515"
+                "reference": "548e12d45760ee66192029f4b642d2f4e3d64118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/410e98739c58ccd1b9ad2f49afd77a8d40144515",
-                "reference": "410e98739c58ccd1b9ad2f49afd77a8d40144515",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/548e12d45760ee66192029f4b642d2f4e3d64118",
+                "reference": "548e12d45760ee66192029f4b642d2f4e3d64118",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "4.*|5.0.*",
-                "maximebf/debugbar": "~1.10.1",
+                "maximebf/debugbar": "~1.10.2",
                 "php": ">=5.3.0",
                 "symfony/finder": "~2.3"
             },
@@ -58,7 +58,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2014-12-04 12:14:32"
+            "time": "2014-12-24 08:00:07"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -395,16 +395,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.13",
+            "version": "v4.2.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a8104d53fef0582a8e93b33f424eafd4bd5c7989"
+                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a8104d53fef0582a8e93b33f424eafd4bd5c7989",
-                "reference": "a8104d53fef0582a8e93b33f424eafd4bd5c7989",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
+                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
                 "shasum": ""
             },
             "require": {
@@ -506,7 +506,106 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-12-21 20:31:14"
+            "time": "2014-12-22 20:56:10"
+        },
+        {
+            "name": "league/url",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/url.git",
+                "reference": "74ae626949e967fd20511d074835ae6ff67d97ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/url/zipball/74ae626949e967fd20511d074835ae6ff67d97ae",
+                "reference": "74ae626949e967fd20511d074835ae6ff67d97ae",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0",
+                "true/punycode": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Url\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ignace Nyamagana Butera",
+                    "email": "nyamsprod@gmail.com",
+                    "homepage": "https://github.com/nyamsprod/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "League/url is a lightweight PHP Url manipulating library",
+            "keywords": [
+                "parse_url",
+                "php",
+                "url"
+            ],
+            "time": "2014-11-27 10:14:00"
+        },
+        {
+            "name": "logicalgrape/paypal-ipn-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/logicalgrape/paypal-ipn-laravel.git",
+                "reference": "cd94efb600c0a072e68c65ff95203ead9c7df017"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/logicalgrape/paypal-ipn-laravel/zipball/cd94efb600c0a072e68c65ff95203ead9c7df017",
+                "reference": "cd94efb600c0a072e68c65ff95203ead9c7df017",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.0.0",
+                "mike182uk/paypal-ipn-listener": "v1.1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "LogicalGrape\\PayPalIpnLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Roemmich",
+                    "email": "chris@logicalgrape.com"
+                }
+            ],
+            "description": "A PayPal IPN client for Laravel.",
+            "keywords": [
+                "ipn",
+                "laravel",
+                "paypal"
+            ],
+            "time": "2014-04-01 15:14:23"
         },
         {
             "name": "maximebf/debugbar",
@@ -565,17 +664,55 @@
             "time": "2014-12-17 08:39:39"
         },
         {
-            "name": "monolog/monolog",
-            "version": "1.11.0",
+            "name": "mike182uk/paypal-ipn-listener",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa"
+                "url": "https://github.com/mike182uk/paypal-ipn-listener.git",
+                "reference": "ff04f592cb37c8ab5ef455d0a14a8b93f5268bc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
-                "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
+                "url": "https://api.github.com/repos/mike182uk/paypal-ipn-listener/zipball/ff04f592cb37c8ab5ef455d0a14a8b93f5268bc2",
+                "reference": "ff04f592cb37c8ab5ef455d0a14a8b93f5268bc2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PayPal": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michael David Barrett",
+                    "email": "mike182uk@gmail.com"
+                }
+            ],
+            "description": "A composer compatible PHP >=5.3.0 PayPal IPN Listener.",
+            "keywords": [
+                "ipn",
+                "listener",
+                "paypal"
+            ],
+            "time": "2013-03-29 18:39:44"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
+                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
                 "shasum": ""
             },
             "require": {
@@ -589,7 +726,7 @@
                 "aws/aws-sdk-php": "~2.4, >2.4.8",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
-                "phpunit/phpunit": "~3.7.0",
+                "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
                 "videlalvaro/php-amqplib": "~2.4"
@@ -608,7 +745,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11.x-dev"
+                    "dev-master": "1.12.x-dev"
                 }
             },
             "autoload": {
@@ -634,7 +771,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-09-30 13:30:58"
+            "time": "2014-12-29 21:29:35"
         },
         {
             "name": "nesbot/carbon",
@@ -785,21 +922,22 @@
         },
         {
             "name": "payum/core",
-            "version": "0.12.8",
+            "version": "0.13.0",
             "target-dir": "Payum/Core",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/Core.git",
-                "reference": "94251537bf39026e6f9484d96c3392a63a32d339"
+                "reference": "8827cbc3e88ad2074834f941fae10f95fb716a49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Core/zipball/94251537bf39026e6f9484d96c3392a63a32d339",
-                "reference": "94251537bf39026e6f9484d96c3392a63a32d339",
+                "url": "https://api.github.com/repos/Payum/Core/zipball/8827cbc3e88ad2074834f941fae10f95fb716a49",
+                "reference": "8827cbc3e88ad2074834f941fae10f95fb716a49",
                 "shasum": ""
             },
             "require": {
-                "kriswallsmith/buzz": "*",
+                "kriswallsmith/buzz": "~0.13",
+                "league/url": "~3.0",
                 "php": ">=5.3.2",
                 "twig/twig": "~1.0"
             },
@@ -838,7 +976,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -882,25 +1020,25 @@
                 "paypal rest",
                 "recurring payment"
             ],
-            "time": "2014-12-12 09:06:05"
+            "time": "2014-12-26 20:42:18"
         },
         {
             "name": "payum/paypal-express-checkout-nvp",
-            "version": "0.12.0",
+            "version": "0.13.0",
             "target-dir": "Payum/Paypal/ExpressCheckout/Nvp",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/PaypalExpressCheckoutNvp.git",
-                "reference": "505836b22c3e94715d463b763c80c954ce2ba5c7"
+                "reference": "ad816caadf7540e056e2233b67332502abe7915d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PaypalExpressCheckoutNvp/zipball/505836b22c3e94715d463b763c80c954ce2ba5c7",
-                "reference": "505836b22c3e94715d463b763c80c954ce2ba5c7",
+                "url": "https://api.github.com/repos/Payum/PaypalExpressCheckoutNvp/zipball/ad816caadf7540e056e2233b67332502abe7915d",
+                "reference": "ad816caadf7540e056e2233b67332502abe7915d",
                 "shasum": ""
             },
             "require": {
-                "payum/core": "0.12.*",
+                "payum/core": "0.13.*",
                 "php": ">=5.3.2"
             },
             "require-dev": {
@@ -909,7 +1047,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -944,27 +1082,27 @@
                 "paypal",
                 "recurring payment"
             ],
-            "time": "2014-10-29 09:36:27"
+            "time": "2014-12-26 20:42:18"
         },
         {
             "name": "payum/payum-laravel-package",
-            "version": "0.12.0",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/PayumLaravelPackage.git",
-                "reference": "f21e71f0c8d5f9f42fecd4c6ba244d438486eb71"
+                "reference": "409310c9ee4e7ae2651e972ab9f36c9ae49cb808"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PayumLaravelPackage/zipball/f21e71f0c8d5f9f42fecd4c6ba244d438486eb71",
-                "reference": "f21e71f0c8d5f9f42fecd4c6ba244d438486eb71",
+                "url": "https://api.github.com/repos/Payum/PayumLaravelPackage/zipball/409310c9ee4e7ae2651e972ab9f36c9ae49cb808",
+                "reference": "409310c9ee4e7ae2651e972ab9f36c9ae49cb808",
                 "shasum": ""
             },
             "require": {
                 "illuminate/container": "~4.0",
                 "illuminate/routing": "~4.0",
                 "illuminate/support": "~4.0",
-                "payum/core": "0.12.*",
+                "payum/core": "0.13.*",
                 "php": ">=5.3.2"
             },
             "suggest": {
@@ -979,7 +1117,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "0.13-dev"
                 }
             },
             "autoload": {
@@ -1022,7 +1160,7 @@
                 "recurring payment",
                 "stripe"
             ],
-            "time": "2014-10-29 20:59:31"
+            "time": "2014-12-28 17:13:44"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -1300,16 +1438,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v1.17.4",
+            "version": "v1.17.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "a2a21885c0d602895c9578b6d2b0a1ff63dc376e"
+                "reference": "e93d4f101fe0c01fb61fe820043ead545045ed3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/a2a21885c0d602895c9578b6d2b0a1ff63dc376e",
-                "reference": "a2a21885c0d602895c9578b6d2b0a1ff63dc376e",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e93d4f101fe0c01fb61fe820043ead545045ed3c",
+                "reference": "e93d4f101fe0c01fb61fe820043ead545045ed3c",
                 "shasum": ""
             },
             "require": {
@@ -1344,7 +1482,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2014-12-15 20:22:31"
+            "time": "2014-12-23 23:59:35"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2230,17 +2368,64 @@
             "time": "2014-11-18 10:08:24"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.16.2",
+            "name": "true/punycode",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "url": "https://github.com/true/php-punycode.git",
+                "reference": "59dca474914324763397be2ea3d6ad3bc48f4688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/true/php-punycode/zipball/59dca474914324763397be2ea3d6ad3bc48f4688",
+                "reference": "59dca474914324763397be2ea3d6ad3bc48f4688",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.x",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "2.0.x-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "True\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Renan Gonçalves",
+                    "email": "renan.saddam@gmail.com"
+                }
+            ],
+            "description": "A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA)",
+            "homepage": "https://github.com/true/php-punycode",
+            "keywords": [
+                "idna",
+                "punycode"
+            ],
+            "time": "2014-08-26 14:21:01"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.16.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -2275,7 +2460,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -2284,7 +2469,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2014-12-25 19:58:19"
         }
     ],
     "packages-dev": [],
@@ -2293,7 +2478,8 @@
     "stability-flags": {
         "splitfeed/android-market-api-php": 20,
         "payum/payum-laravel-package": 0,
-        "payum/paypal-express-checkout-nvp": 0
+        "payum/paypal-express-checkout-nvp": 0,
+        "logicalgrape/paypal-ipn-laravel": 20
     },
     "prefer-stable": false,
     "platform": [],

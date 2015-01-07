@@ -452,7 +452,8 @@ Route::get('cancel-subscription', function(){
 Route::get('resume-subscription', function(){
 	$user = Auth::user();
 	$user -> subscription('TANSponsoredPro') -> resume();
-	return View::make('account-settings') -> with('user', $user);
+	return View::make('account-settings') -> with('user', $user)
+										-> with('upcomingBillingDate', 'undefined');
 });
 
 //handle failed payments

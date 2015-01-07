@@ -451,7 +451,7 @@ Route::get('cancel-subscription', function(){
 
 Route::get('resume-subscription', function(){
 	$user = Auth::user();
-	$user -> subscription('TANSponsoredPro') -> resume();
+	$user -> subscription('OneDayTestPlan') -> resume();
 	return View::make('account-settings') -> with('user', $user)
 										-> with('upcomingBillingDate', 'undefined');
 });

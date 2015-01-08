@@ -461,3 +461,8 @@ Route::post('webhook', 'MyWebhookController@handleWebhook');
 
 //IPN listener
 Route::post('ipn', array('uses' => 'IpnController@store', 'as' => 'ipn'));
+
+//test studly_case function
+Route::get('test-studly-case', function(){
+	return studly_case(str_replace('.', '_', 'invoice.payment_failed'));
+});

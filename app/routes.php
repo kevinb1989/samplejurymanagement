@@ -466,3 +466,13 @@ Route::post('ipn', array('uses' => 'IpnController@store', 'as' => 'ipn'));
 Route::get('test-studly-case', function(){
 	return studly_case(str_replace('.', '_', 'invoice.payment_failed'));
 });
+
+//display the webhook error
+Route::get('webhook-error', function(){
+	return View::make('webhook-error');
+});
+
+//display stripe client information
+Route::get('stripe-client', function(){
+	return dd(App::make('Laravel\Cashier\BillableRepositoryInterface')->find('cus_5T8VCjjmu4UTGz'));
+});

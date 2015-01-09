@@ -29,13 +29,13 @@ class MyWebhookController extends Laravel\Cashier\WebhookController {
 
 			if ($billable){
 				//$billable->subscription()->cancel();	
-				// $billable -> stripe_active = 0;
-				// $billable -> subscription_ends_at = date('Y-m-d H:i:s');
-				// $billable -> save();
+				$billable -> stripe_active = 0;
+				$billable -> subscription_ends_at = date('Y-m-d H:i:s');
+				$billable -> save();
 			} 
 		}
 
-		return new Response('Webhook Handled', 200);
+		return new Symfony\Component\HttpFoundation\Response('Webhook Handled', 200);
 	}
 
 

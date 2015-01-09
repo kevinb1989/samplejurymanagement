@@ -472,7 +472,22 @@ Route::get('webhook-error', function(){
 	return View::make('webhook-error');
 });
 
+Route::get('webhook-error-2', function(){
+	return View::make('stripe-error-2');
+});
+
+Route::get('test-date', function(){
+	$user = Auth::user();
+	$user -> subscription_ends_at = date('Y-m-d H:i:s');
+	$user -> save();
+	return 'user saved!';
+});
+
 //display stripe client information
 Route::get('stripe-client', function(){
-	return dd(App::make('Laravel\Cashier\BillableRepositoryInterface')->find('cus_5T8VCjjmu4UTGz'));
+	$billable = App::make('Laravel\Cashier\BillableRepositoryInterface')->find('cus_5T8VCjjmu4UTGz');
+	$billable -> stripe_active = 0;
+	$billable -> subscription_ends_at = date('Y-m-d H:i:s');
+	$billable -> save();
+	return 'user saved!';
 });

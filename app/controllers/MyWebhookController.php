@@ -13,5 +13,30 @@ class MyWebhookController extends Laravel\Cashier\WebhookController {
 		return $payload['data']['object']['attempt_count'] > 0;
 	}
 
+	/**
+	 * Handle a failed payment from a Stripe subscription.
+	 * if both Stripe and Cashier attempt to cancel the subscription at the same time it will failed on client side
+	 * So we only need to update our db.
+	 *
+	 * @param  array  $payload
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	protected function handleInvoicePaymentFailed(array $payload)
+	{
+		if ($this->tooManyFailedPayments($payload))
+		{
+			$billable = $this->getBillable($payload['data']['object']['customer']);
+
+			if ($billable){
+				//$billable->subscription()->cancel();	
+				$billable -> stripe_active = 0;
+				$billable -> subscription_ends_at = date('Y-m-d H:i:s');
+				$billable -> save();
+			} 
+		}
+
+		return new Response('Webhook Handled', 200);
+	}
+
 
 }
